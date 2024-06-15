@@ -13,4 +13,28 @@
     {
         <p>No Products</p>
     }
+    else
+    {
+        <table>
+            <thead>
+                <tr>                    
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>                        
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>@product.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 </div>
+
+<p><a asp-controller="Product" asp-action="Create">Create New</a></p>
