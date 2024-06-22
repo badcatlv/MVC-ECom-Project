@@ -1,10 +1,11 @@
 ﻿@using EComMVC.Models
 @model List<Product>
+
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Products";
+    ViewData["Title"] = "Product";
 }
 
 <div>
@@ -17,19 +18,22 @@
     {
         <table>
             <thead>
-                <tr>                    
+                <tr>
                     <th>Product Name</th>
                     <th>Product Price</th>
-                    <th>Product Description</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var product in Model)
                 {
-                    <tr>                        
+                    <tr>
                         <td>@product.Name</td>
                         <td>@product.Price</td>
-                        <td>@product.Description</td>
+                        <td>
+                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">Edit</a> |
+                            <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">Details</a> |
+                            <a asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                        </td>
                     </tr>
                 }
             </tbody>
