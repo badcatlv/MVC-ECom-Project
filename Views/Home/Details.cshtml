@@ -1,0 +1,29 @@
+﻿@using EComMVC.Models
+@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Name</h1>
+
+<table class="">    
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Price)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Description)
+        </td>
+    </tr>
+    </table>
+
+    <a asp-controller="Home" asp-action="Index">Back to List</a>
