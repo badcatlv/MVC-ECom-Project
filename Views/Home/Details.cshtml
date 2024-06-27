@@ -5,25 +5,52 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@Model.Name</h1>
-
-<table class="">    
-    <tr>
-        <th>
+<div>
+    <h1>@Html.DisplayFor(model => model.Name)</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <td>
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price)
-        </td>
-    </tr>
-    <tr>
-        <th>
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <td>
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
-        </td>
-    </tr>
-    </table>
-
+        </dd>
+    </dl>
     <a asp-controller="Home" asp-action="Index">Home</a>
+</div>
+<div>
+    <h1>@Html.DisplayFor(model => model.Name)</h1>
+
+    <table>
+        <tr>
+            <th>
+                Price
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Price)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Description
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Description)
+            </td>
+        </tr>
+    </table>
+</div>
+
+<a asp-controller="Home" asp-action="Index">Home</a>
